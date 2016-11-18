@@ -8,7 +8,21 @@ export default class Layout extends React.Component {
 
   render() {
     return (
-      <div>general</div>
+      <div>
+        <p>General page</p>
+
+        <main>
+          <section class="general-login">
+            <form>
+              <input type="email" name="email-auth" /><br/>
+              <input type="password" name="password-auth"/><br/>
+              <button type="submit">Sign In</button>
+            </form>
+          </section>
+        </main>
+
+
+      </div>
     )
   }
 

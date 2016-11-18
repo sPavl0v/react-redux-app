@@ -12,14 +12,14 @@ const expresJWT    = require('express-jwt');
 const jwt          = require('jsonwebtoken');
 
 
-
+/*
 mongoose.connect('mongodb://localhost:27017/my_todo');
 
 
 let Todo = require('./db/todoSchema');
 let User = require('./db/userSchema');
 //let Record = require('./db/recordSchema');
-
+*/
 
 
 
