@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Layout extends React.Component {
+export default class General extends React.Component {
 
   constructor(props) {
     super(props);

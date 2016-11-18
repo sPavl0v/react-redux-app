@@ -81,7 +81,7 @@ apiRouter.route('/todos')
      else
        return res.send(err);
      }
-     res.json({ message: 'Record created!' });
+     res.json({ message: 'Todo created!' });
   });
 
 })
@@ -139,7 +139,7 @@ apiRouter.route('/users')
      else
        return res.send(err);
      }
-     res.json({ message: 'Record created!' });
+     res.json({ message: 'User created!' });
   });
 
 })
