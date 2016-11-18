@@ -4,6 +4,30 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
 .main-container {
 
+}
+
+.general-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.general-login input {
+  margin-top: 10%;
+}
+
+.footer {
+  display: flex;
+  align-items: baseline;
 }

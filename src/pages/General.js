@@ -13,9 +13,10 @@ export default class Layout extends React.Component {
 
         <main>
           <section class="general-login">
+            <p>Sign In</p>
             <form>
-              <input type="email" name="email-auth" /><br/>
-              <input type="password" name="password-auth"/><br/>
+              <input type="email" /><br/>
+              <input type="password"/><br/>
               <button type="submit">Sign In</button>
             </form>
           </section>
