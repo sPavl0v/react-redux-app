@@ -31,9 +31,10 @@ export default class Layout extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="main-container">
         <Header />
-        { (auth == true || this.props.children.type.name == "General") ? (this.props.children) : (<NotFound />) }
+            { (localStorage.getItem('auth') == 'false' && this.props.children.type.name != 'General')
+             ? (<NotFound />) : (this.props.children)}
         <Footer />
       </div>
     )

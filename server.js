@@ -12,7 +12,6 @@ const expresJWT    = require('express-jwt');
 const jwt          = require('jsonwebtoken');
 
 
-
 mongoose.connect('mongodb://localhost:27017/my_todo');
 
 
