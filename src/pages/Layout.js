@@ -7,15 +7,10 @@ import NotFound from "./NotFound";
 import { connect } from 'react-redux';
 import * as actions from "../actions/index";
 
-let auth = false;
-
 
 @connect((store) => {
   return {
-    todos: store.todos,
-    done: store.done,
-    notifications: store.notifications,
-    items: store.items
+    user: store.user,
   };
 })
 
@@ -25,11 +20,9 @@ export default class Layout extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.dispatch(actions.getTodosCreator());
-  }
 
   render() {
+    console.log(this.props.children.type.name);
     return (
       <div class="main-container">
         <Header />

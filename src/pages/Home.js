@@ -6,6 +6,10 @@ export default class Home extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+    console.log('home mounted');
+  }
+
   render() {
     return (
       <div>home</div>

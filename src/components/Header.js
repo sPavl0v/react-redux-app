@@ -7,6 +7,7 @@ import * as actions from "../actions/index";
 
 @connect((store) => {
   return {
+    user: store.user,
     todos: store.todos,
     done: store.done,
     notifications: store.notifications,
@@ -43,7 +44,7 @@ export default class Header extends React.Component {
             <li>
               <Link to="about">About</Link>
             </li>
-            
+
             <li>
               <Link to="/">Log Out</Link>
             </li>

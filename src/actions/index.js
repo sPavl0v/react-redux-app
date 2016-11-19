@@ -11,6 +11,11 @@ const getTodos = (todos) => ({
 });
 
 
+export const signIn = (data) => ({
+  type: "SIGN_IN",
+  data
+});
+
 
 
 export const addNote = (title) => ({
@@ -56,4 +61,25 @@ export function addTodoCreator(title) {
           })
       });
   };
+}
+
+export function signInCreator(email, password) {
+
+    return (dispatch) => {
+      axios.get(`http://localhost:8080/api/users/${email}`)
+        .then(function(response) {
+
+          if(response.data == null) console.log("%c Wrong email address!", "color: red; font-size: 25px");
+          else if(password != response.data.password) console.log("%c Wrong password!", "color: red; font-size: 25px");
+            else {
+              console.log("%c Krasava!", "color: red; font-size: 25px");
+              dispatch(signIn(response.data));
+              localStorage.setItem('auth', true);
+              location.hash = "/home";
+            }
+
+
+        });
+    }
+
 }

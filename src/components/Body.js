@@ -12,8 +12,9 @@ export default class Body extends React.Component {
   render() {
     return (
       <div class="body">
-        <AddTodo />
-        <List />
+        {/* <AddTodo />
+        <List /> */}
+        list
       </div>
     );
   }

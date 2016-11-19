@@ -4,6 +4,10 @@ const items = (state = 'todos', action) => {
       console.log('ITEMS_CHANGED');
       return action.value;
 
+    // case 'SIGN_IN':
+    //   console.log('bla blaa');
+    //   return state;
+
     default:
       return state
   }
