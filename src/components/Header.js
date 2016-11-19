@@ -8,9 +8,6 @@ import * as actions from "../actions/index";
 @connect((store) => {
   return {
     user: store.user,
-    todos: store.todos,
-    done: store.done,
-    notifications: store.notifications,
   };
 })
 

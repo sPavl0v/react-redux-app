@@ -27,17 +27,20 @@ export default class About extends React.Component {
     console.log(this.props);
 
     return (
+
       <div>
-        <p>General page</p>
 
-        <main>
           <section class="general-login">
-              <input type="email" id="signin_email" /><br/>
-              <input type="password" id="signin_pass" /><br/>
-              <button onClick={this.signIn.bind(this)}>Sign In</button>
-          </section>
-        </main>
 
+            <img src="assets/todo-logo-1.png" alt="Logo" width="35%"/>
+            <p>Sign In</p>
+
+            <input type="email" placeholder="Email" id="signin_email" />
+            <input type="password" placeholder="••••••••••" id="signin_pass" />
+            <button onClick={this.signIn.bind(this)} >Sign In</button>
+
+            <p class="sign-in-label">Don't have an account? <a href="agar.io">Sign up</a></p>
+          </section>
 
       </div>
     )

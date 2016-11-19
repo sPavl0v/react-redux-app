@@ -4,6 +4,125 @@
   box-sizing: border-box;
 }
 
-.main-container {
+html {
+  height: 100%;
+  font-family: Segoe UI, sans-serif;
+}
 
+body {
+  min-height: 100%;
+}
+
+#app {
+  height: 100vh;
+}
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(assets/bg-1.jpg) no-repeat center center fixed;
+  background-size: cover;
+
+}
+
+header {
+  visibility: hidden;
+}
+
+
+.general-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45vh;
+  height: 75vh;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(68, 0, 102,0.4), rgba(0,0,0,0.6));
+  color: #fff;
+  font-size: 20px;
+  border-radius: 40px;
+}
+
+.general-login img {
+  margin-bottom: 20%;
+  opacity: 0.8;
+}
+
+.general-login input {
+  margin-top: 10%;
+  width: 75%;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+}
+
+.general-login input:focus {
+  outline: none;
+}
+
+.general-login input[type=email] {
+  background-image: url("assets/ph-2.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left;
+  text-indent: 25px;
+}
+
+.general-login input[type=password] {
+  background-image: url("assets/ph-1.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: left;
+  text-indent: 25px;
+}
+
+
+.general-login ::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.general-login input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
+.general-login button {
+  margin-top: 10%;
+  width: 75%;
+  border: none;
+  border-radius: 20px;
+  padding: 16px;
+  color: #fff;
+  background-color: #ff1a8c;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.general-login .sign-in-label {
+  display: block;
+  margin-top: 10%;
+  text-decoration: none;
+  color: #a6a6a6;
+  font-size: 16px;
+}
+.general-login a {
+  text-decoration: none;
+  color: #fff
+}
+
+.general-login a: hover {
+  text-decoration: none;
+}
+
+.footer {
+  display: flex;
+  visibility: hidden;
 }

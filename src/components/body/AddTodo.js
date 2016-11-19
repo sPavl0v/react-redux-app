@@ -5,7 +5,7 @@ import * as actions from "../../actions/index";
 
 @connect((store) => {
   return {
-    todos: store.todos,
+    user: store.user,
   };
 })
 
