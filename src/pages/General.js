@@ -1,27 +1,34 @@
 import React from "react";
 
-export default class Layout extends React.Component {
+export default class General extends React.Component {
 
   constructor(props) {
     super(props);
   }
 
+  signIn() {
+    localStorage.setItem('auth', true);
+    location.hash = "/home";
+  }
+
   render() {
+
+    localStorage.setItem('auth', 'false');
+
     return (
       <div>
-        <p>General page</p>
 
-        <main>
           <section class="general-login">
-            <p>Sign In</p>
-            <form>
-              <input type="email" /><br/>
-              <input type="password"/><br/>
-              <button type="submit">Sign In</button>
-            </form>
-          </section>
-        </main>
 
+            <img src="assets/todo-logo-1.png" alt="Logo" width="35%"/>
+            <p>Sign In</p>
+
+            <input type="email" placeholder="Email"/>
+            <input type="password" placeholder="••••••••••"/>
+            <button onClick={this.signIn.bind(this)} >Sign In</button>
+
+            <p class="sign-in-label">Don't have an account? <a href="agar.io">Sign up</a></p>
+          </section>
 
       </div>
     )

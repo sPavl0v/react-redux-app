@@ -19,9 +19,6 @@ export default class List extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.dispatch(actions.getTodosCreator());
-  }
 
   render() {
 
