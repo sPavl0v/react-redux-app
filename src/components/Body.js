@@ -13,7 +13,8 @@ export default class Body extends React.Component {
     return (
       <div class="body">
         <AddTodo />
-        <List />
+        {/* <List /> */}
+        list
       </div>
     );
   }

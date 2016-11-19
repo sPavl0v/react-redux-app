@@ -155,15 +155,44 @@ apiRouter.route('/users')
 
 apiRouter.route('/users/:email')
   .get(function(req, res) {
-    Todo.findOne({
+    User.findOne({
 
-      'email': req.params.username
+      'email': req.params.email
 
     }, function (err, user) {
       if (err) res.send(err);
       res.json(user);
     });
-  });
+  })
+
+  .put(function(req, res) {
+  User.findOneAndUpdate({
+    'email': req.params.email
+
+  }, {$set: {
+  //  interests: req.params.interest
+  todos: req.params.todos,
+  done: req.params.done,
+  notifications: req.params.notifications
+
+  } },
+
+     function(err, event) {
+       if(err) res.send(err)
+       res.json({message: 'Event updated!'});
+     });
+})
+
+.delete(function(req, res) {
+  User.findOneAndDelete({
+
+    'email': req.params.email
+
+  }, function(err, user) {
+       if(err) res.send(err)
+       res.json({message: 'User deleted!'});
+     });
+});
 
 
 

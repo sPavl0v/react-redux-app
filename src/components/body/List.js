@@ -6,10 +6,11 @@ import * as actions from "../../actions/index";
 
 @connect((store) => {
   return {
-    todos: store.todos,
-    done: store.done,
-    notifications: store.notifications,
-    items: store.items
+    user: store.user,
+    // todos: store.todos,
+    // done: store.done,
+    // notifications: store.notifications,
+    // items: store.items
   };
 })
 
@@ -48,7 +49,7 @@ export default class List extends React.Component {
     return (
       <div class="list">
         <h3>List of your TODOS:</h3>
-        {todosComponents}
+        {/* {todosComponents} */}
       </div>
     );
   }
