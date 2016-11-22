@@ -28,13 +28,33 @@ export default class AddTodo extends React.Component {
     document.getElementById('addTodo').value = '';
   }
 
+  addNote(user) {
+    let val = document.getElementById('addNote').value;
+    this.props.dispatch( actions.addNoteCreator(user, val) );
+    document.getElementById('addNote').value = '';
+  }
+
   render() {
-    const user = this.props.user;
+    const { user, items } = this.props;
     return (
-      <div class="app_add-todo">
-        <input placeholder="Add new todo" type="text" id="addTodo" />
-        <input type="button" value="Add" onClick={this.addTodo.bind(this,user)} />
+      <div>
+        {(items == 'todos') ? (
+          <div class="app_add-todo">
+            <input placeholder="Add new todo" type="text" id="addTodo" />
+            <input type="button" value="Add" onClick={this.addTodo.bind(this,user)} />
+          </div>):
+          (items == 'notifications') ? (
+
+          <div class="app_add-todo">
+            <input placeholder="Add new todo" type="text" id="addNote" />
+            <input type="button" value="Add" onClick={this.addNote.bind(this,user)} />
+          </div>
+          ):
+          (null)
+        }
       </div>
+
+
     );
   }
 
