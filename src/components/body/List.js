@@ -23,12 +23,13 @@ export default class List extends React.Component {
 
   render() {
 
-    let todosComponents;
+    let todosComponents, logo;
     let { todos, done, notifications } = this.props.user;
     const { items } = this.props;
 
     switch(items) {
       case 'todos':
+        logo = <h3>List of your Todos:</h3>;
         if(todos == null || todos == undefined || todos.length == 0) todosComponents = <div> No items found</div>
         else {
            todosComponents = todos.split(",").map( (todo,i) => {
@@ -38,6 +39,7 @@ export default class List extends React.Component {
         break;
 
       case 'done':
+      logo = <h3>List of done todos:</h3>;
       if(done == null || done == undefined || done.length == 0) todosComponents = <div> No items found</div>
       else {
         todosComponents = done.split(",").map( (done,i) => {
@@ -47,10 +49,11 @@ export default class List extends React.Component {
       break;
 
       case 'notifications':
+      logo = <h3>List of your notifications:</h3>;
       if(notifications == null || notifications == undefined || notifications.length == 0) todosComponents = <div> No items found</div>
       else {
-        todosComponents = notifications.split(",").map( (note) => {
-          return <Todo key={note} title={note} type="notification" />
+        todosComponents = notifications.split(",").map( (note,i) => {
+          return <Todo key={i} title={note} type="notification" />
         });
       }
       break;
@@ -59,7 +62,7 @@ export default class List extends React.Component {
 
     return (
         <div class="app_list">
-          <h3>List of your todos:</h3>
+          {logo}
           {todosComponents}
         </div>
     );

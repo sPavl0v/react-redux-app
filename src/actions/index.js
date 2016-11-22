@@ -23,6 +23,7 @@ export const toggleForm = (value) => ({
 });
 
 
+
 const userCreated = () => ({
   type: 'USER_CREATED'
 });
@@ -34,6 +35,16 @@ const updateUser = (data) => ({
 
 const doSth = (data) => ({
   type: 'DO_STH',
+  data
+});
+
+const deleteTodo = (data) => ({
+  type: 'DELETE_TODO',
+  data
+});
+
+const deleteNote = (data) => ({
+  type: 'DELETE_NOTE',
   data
 });
 
@@ -86,6 +97,22 @@ export function addTodoCreator(user, title) {
         });
   };
 }
+
+export function addNoteCreator(user, title) {
+
+  return (dispatch) => {
+          axios.put(`http://localhost:8080/api/users/${user.email}`, {
+            todos: user.todos,
+            done: user.done,
+            notifications: (user.notifications == "") ? (`${title}`) : (`${user.notifications},${title}`)
+
+          }).then(function(response) {
+            dispatch(updateUser(response.data));
+        });
+  };
+}
+
+
 
 export function reSignIn(email) {
   return (dispatch) => {
@@ -156,6 +183,48 @@ export function doSthCreator(user, title) {
       });
   }
 }
+
+export function deleteTodoCreator(user, title) {
+  let done = user.done.split(',');
+
+  done.forEach( (elem,i) => {
+    if(elem == title) done.splice(i,1);
+  });
+
+  return (dispatch) => {
+    axios.put(`http://localhost:8080/api/users/${user.email}`, {
+
+      todos: user.todos,
+      done: done.join(','),
+      notifications: user.notifications
+
+      }).then(function(response) {
+        dispatch(deleteTodo(response.data));
+      });
+  }
+}
+
+
+export function deleteNoteCreator(user, title) {
+  let notes = user.notifications.split(',');
+
+  notes.forEach( (elem,i) => {
+    if(elem == title) notes.splice(i,1);
+  });
+  return (dispatch) => {
+    axios.put(`http://localhost:8080/api/users/${user.email}`, {
+
+      todos: user.todos,
+      done: user.done,
+      notifications: notes.join(',')
+
+      }).then(function(response) {
+        dispatch(deleteNote(response.data));
+      });
+  }
+}
+
+
 
 export function logOutCreator() {
   return (dispatch) => {

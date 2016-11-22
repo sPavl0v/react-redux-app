@@ -18,7 +18,7 @@ const user = (state = {
         done: "",
         notifications: "",
       });
-      break;
+
 
     case 'SIGN_IN':
       console.log('SIGN_IN');
@@ -35,9 +35,20 @@ const user = (state = {
       return Object.assign({}, state, action.data);
 
 
+    case 'DELETE_TODO':
+      console.log('DELETE_TODO');
+      return Object.assign({}, state, action.data);
+
+
+    case 'DELETE_NOTE':
+      console.log('DELETE_NOTE');
+      return Object.assign({}, state, action.data);
+
+
     case 'USER_CREATED':
         console.log('USER_CREATED');
         return Object.assign({}, state);
+
 
     default:
       return state;

@@ -33,6 +33,87 @@ header {
   /*visibility: hidden;*/
 }
 
+ul.nav-main {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(to top, rgba(224, 204, 255,0.4), rgba(0,0,0,0.6));
+  color: #fff;
+}
+
+ul.nav-main li{
+  float: left;
+}
+
+ul.nav-main li.to-right {
+  float: right;
+}
+
+ul.nav-main li a {
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 18px;
+}
+
+
+ul.nav-main li:not(.logo) a:hover {
+  background-color: #000;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+ul.nav-main li.logo a:hover {
+  background-color: #ff1a8c;
+  color: #fff;
+  transition: 0.3s;
+}
+
+ul.nav-main li.nav-mobile {
+  display: none;
+}
+
+@media screen and (max-width:650px) {
+
+  ul.nav-main li:not(:first-child) {
+    display: none;
+  }
+
+  ul.nav-main li.nav-mobile {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:650px) {
+  ul.nav-main.responsive {
+    position: relative;
+  }
+
+  ul.nav-main.responsive li.nav-mobile {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  ul.nav-main.responsive li {
+    float: none;
+    display: inline;
+  }
+
+  ul.nav-main.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+
+
 /*Sign in Form */
 .general-login {
   display: flex;

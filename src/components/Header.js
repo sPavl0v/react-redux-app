@@ -23,6 +23,15 @@ export default class Header extends React.Component {
     this.props.dispatch(actions.logOutCreator());
   }
 
+  makeResponsive() {
+    let x = document.getElementById("navMain");
+    if(x.className === "nav-main") {
+      x.className += " responsive";
+    } else {
+      x.className = "nav-main";
+    }
+  }
+
   render() {
 
     const { todos, done, notifications} = this.props;
@@ -31,9 +40,9 @@ export default class Header extends React.Component {
 
       <header>
         <nav>
-          <ul class="nav_main">
+          <ul class="nav-main" id="navMain">
             <li class="logo">
-              <a>Logo</a>
+              <Link to="home">TODO now</Link>
             </li>
 
             <li>
@@ -48,8 +57,12 @@ export default class Header extends React.Component {
               <Link to="about">About</Link>
             </li>
 
-            <li>
+            <li class="to-right">
               <Link to="/" onClick={this.logOut.bind(this)}>Log Out</Link>
+            </li>
+
+            <li class="nav-mobile">
+              <Link to="" onClick={this.makeResponsive.bind(this)}>☰</Link>
             </li>
           </ul>
         </nav>
