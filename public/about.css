@@ -1,0 +1,18 @@
+.about_container {
+  background: linear-gradient(to bottom, rgba(68, 0, 102,0.4), rgba(0,0,0,0.6));
+  height: 55vh;
+  margin-top: 15vh;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 40px;
+  box-sizing: border-box;
+  width: 55vw;
+}
+
+.about_block {
+  padding-bottom: 30px;
+}
+
+.about_block h2, .about_connects {
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+}

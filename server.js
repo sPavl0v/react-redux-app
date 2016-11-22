@@ -138,7 +138,7 @@ apiRouter.route('/users')
      else
        return res.send(err);
      }
-     res.json({ message: 'User created!' });
+     res.json({message: 'User created'});
   });
 
 })
@@ -165,23 +165,26 @@ apiRouter.route('/users/:email')
     });
   })
 
-  .put(function(req, res) {
-  User.findOneAndUpdate({
+
+.put(function(req, res) {
+  User.findOne({
+
     'email': req.params.email
 
-  }, {$set: {
-  //  interests: req.params.interest
-  todos: req.params.todos,
-  done: req.params.done,
-  notifications: req.params.notifications
+  }, function (err, user) {
+    if (err) res.send(err);
 
-  } },
+    user.todos = req.body.todos;
+    user.done = req.body.done;
+    user.notifications = req.body.notifications;
 
-     function(err, event) {
-       if(err) res.send(err)
-       res.json({message: 'Event updated!'});
-     });
+    user.save(function(err) {
+      if(err) res.send(err);
+      res.json(user);
+    })
+  });
 })
+
 
 .delete(function(req, res) {
   User.findOneAndDelete({
@@ -193,8 +196,6 @@ apiRouter.route('/users/:email')
        res.json({message: 'User deleted!'});
      });
 });
-
-
 
 
 
