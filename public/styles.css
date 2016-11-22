@@ -104,6 +104,7 @@ header {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .general-login .sign-in-label {
@@ -113,13 +114,14 @@ header {
   color: #a6a6a6;
   font-size: 16px;
 }
-.general-login a {
+.signUpBtn {
   text-decoration: none;
   color: #fff
 }
 
-.general-login a: hover {
-  text-decoration: none;
+.signUpBtn:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .footer {

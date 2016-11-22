@@ -1,0 +1,54 @@
+.app_container {
+  background: linear-gradient(to bottom, rgba(68, 0, 102,0.4), rgba(0,0,0,0.6));
+  min-height: 55vh;
+  margin-top: 15vh;
+  color: rgba(255, 255, 255, 0.7);
+  box-sizing: border-box;
+  width: 55vw;
+}
+
+
+ /* BUTTONS */
+
+.app_buttons {
+  margin-top: 2rem;
+}
+
+.app_buttons ul {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.app_buttons li {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  text-align: center;
+  padding-top: 0.9rem;
+  width: 33.333%;
+  display: inline-block;
+  list-style-type: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  height: 3rem;
+  cursor: pointer;
+  transition: .5s;
+  background-color: transparent;
+}
+
+.app_buttons li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+ /* SEARCH FIELD */
+
+.app_add-todo {
+  width: 70%;
+  margin: 2rem auto;
+}
+
+
+ /* LIST */
+
+.app_list {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}

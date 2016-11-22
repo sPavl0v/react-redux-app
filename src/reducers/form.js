@@ -1,7 +1,8 @@
-const items = (state = 'todos', action) => {
+const items = (state = 'signIn', action) => {
+
   switch (action.type) {
-    case 'ITEMS_CHANGED':
-      console.log('ITEMS_CHANGED');
+    case 'TOGGLE_FORM':
+      console.log('TOGGLE_FORM');
       return action.value;
 
     default:

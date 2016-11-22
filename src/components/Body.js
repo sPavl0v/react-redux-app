@@ -2,6 +2,7 @@ import React from "react";
 
 import AddTodo from "./body/AddTodo";
 import List from "./body/List";
+import AppButtons from "./body/AppButtons";
 
 export default class Body extends React.Component {
 
@@ -11,10 +12,10 @@ export default class Body extends React.Component {
 
   render() {
     return (
-      <div class="body">
+      <div class="app_container">
+        <AppButtons />
         <AddTodo />
-        {/* <List /> */}
-        list
+        <List />
       </div>
     );
   }

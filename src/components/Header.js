@@ -8,6 +8,7 @@ import * as actions from "../actions/index";
 @connect((store) => {
   return {
     user: store.user,
+    form: store.form,
   };
 })
 
@@ -15,6 +16,11 @@ export default class Header extends React.Component {
 
   constructor(props) {
     super(props);
+  }
+
+  logOut() {
+    // this.props.dispatch(actions.toggleForm('signIn'));
+    this.props.dispatch(actions.logOutCreator());
   }
 
   render() {
@@ -43,7 +49,7 @@ export default class Header extends React.Component {
             </li>
 
             <li>
-              <Link to="/">Log Out</Link>
+              <Link to="/" onClick={this.logOut.bind(this)}>Log Out</Link>
             </li>
           </ul>
         </nav>

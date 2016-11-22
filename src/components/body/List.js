@@ -6,11 +6,8 @@ import * as actions from "../../actions/index";
 
 @connect((store) => {
   return {
+    items: store.items,
     user: store.user,
-    // todos: store.todos,
-    // done: store.done,
-    // notifications: store.notifications,
-    // items: store.items
   };
 })
 
@@ -21,36 +18,50 @@ export default class List extends React.Component {
   }
 
 
+
+  // TODO: CHANGE KEYS, REWRITE SWITCH AS A FUNCTION
+
   render() {
 
-    const { todos, done, notifications, items } = this.props;
     let todosComponents;
+    let { todos, done, notifications } = this.props.user;
+    const { items } = this.props;
 
-
-    switch (items) {
+    switch(items) {
       case 'todos':
-        todosComponents = todos.map( (todo) => {
-          return <Todo key={todo._id} id={todo._id} check="true" title={todo.title} />
-        });
+        if(todos == null || todos == undefined || todos.length == 0) todosComponents = <div> No items found</div>
+        else {
+           todosComponents = todos.split(",").map( (todo,i) => {
+            return <Todo key={i} title={todo} type="todo" />
+          });
+        }
         break;
-      case 'done':
-        todosComponents = done.map( (todo) => {
-          return <Todo key={todo.id} id={todo.id} check="false" title={todo.title} />
-        });
-        break;
-      default:
-          todosComponents = notifications.map( (note) => {
-          return <Todo key={note.id} id={note.id} check="false" title={note.title} />
-        });
 
+      case 'done':
+      if(done == null || done == undefined || done.length == 0) todosComponents = <div> No items found</div>
+      else {
+        todosComponents = done.split(",").map( (done,i) => {
+          return <Todo key={i} title={done} type="done" />
+        });
+      }
+      break;
+
+      case 'notifications':
+      if(notifications == null || notifications == undefined || notifications.length == 0) todosComponents = <div> No items found</div>
+      else {
+        todosComponents = notifications.split(",").map( (note) => {
+          return <Todo key={note} title={note} type="notification" />
+        });
+      }
+      break;
     }
 
 
     return (
-      <div class="list">
-        <h3>List of your TODOS:</h3>
-        {/* {todosComponents} */}
-      </div>
+        <div class="app_list">
+          <h3>List of your todos:</h3>
+          {todosComponents}
+        </div>
     );
   }
 

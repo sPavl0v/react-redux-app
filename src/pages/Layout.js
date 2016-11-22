@@ -10,6 +10,7 @@ import * as actions from "../actions/index";
 
 @connect((store) => {
   return {
+    items: store.items,
     user: store.user,
   };
 })
@@ -22,7 +23,7 @@ export default class Layout extends React.Component {
 
 
   render() {
-    console.log(this.props.children.type.name);
+
     return (
       <div class="main-container">
         <Header />
