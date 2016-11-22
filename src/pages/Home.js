@@ -1,5 +1,6 @@
 import React from "react";
 
+import Greeting from "../components/home/Greeting";
 export default class Home extends React.Component {
 
   constructor(props) {
@@ -12,7 +13,9 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <div>home</div>
+      <div>
+        <Greeting/>
+      </div>
     )
   }
 

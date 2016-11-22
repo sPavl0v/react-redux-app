@@ -22,16 +22,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url(assets/bg-1.jpg) no-repeat center center fixed;
+  background: url(assets/bg-2.jpg) no-repeat center center fixed;
   background-size: cover;
 
 }
 
+
+/* Header */
 header {
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 
-
+/*Sign in Form */
 .general-login {
   display: flex;
   flex-direction: column;
@@ -39,11 +41,9 @@ header {
   align-items: center;
   width: 45vh;
   height: 75vh;
-  z-index: 100;
-  background: linear-gradient(to bottom, rgba(68, 0, 102,0.4), rgba(0,0,0,0.6));
+  background: linear-gradient(to bottom, rgba(224, 204, 255,0.4), rgba(0,0,0,0.6));
   color: #fff;
   font-size: 20px;
-  border-radius: 40px;
 }
 
 .general-login img {
@@ -125,4 +125,42 @@ header {
 .footer {
   display: flex;
   visibility: hidden;
+}
+
+
+/*User profile*/
+.home-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  width: 80vw;
+  height: 60vh;
+  margin-top: 15vh;
+  background: linear-gradient(to bottom, rgba(224, 204, 255,0.4), rgba(0,0,0,0.6));
+  color: #fff;
+  font-size: 20px;
+}
+
+.home-profile .profile-info {
+  margin: 5% 0 5% 5%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;;
+  align-items: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.home-profile .profile-info img {
+  border-radius: 50%;
+  margin-bottom: 2%;
+  border: 4px solid #ff1a8c;
+}
+
+.profile-info p,h1 {
+  margin-bottom: 4%;
+}
+
+@media only screen and (max-width: 800px) {
+
 }
