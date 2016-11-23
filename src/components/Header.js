@@ -42,7 +42,8 @@ export default class Header extends React.Component {
         <nav>
           <ul class="nav-main" id="navMain">
             <li class="logo">
-              <Link to="">TODO<span class="logo-by">NOW</span></Link>
+              {/*// TODO: fix refering to wrong comp*/}
+              <Link to="app">TODO<span class="logo-by">NOW</span></Link>
             </li>
 
             <li>
@@ -62,6 +63,7 @@ export default class Header extends React.Component {
             </li>
 
             <li class="nav-mobile">
+              {/*// TODO: fix refering to wrong comp*/}
               <Link to="" onClick={this.makeResponsive.bind(this)}>☰</Link>
             </li>
           </ul>

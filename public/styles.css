@@ -241,11 +241,11 @@ ul.nav-main li.logo .logo-by {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: center;;
   width: 80vw;
-  height: 10vh;
   color: #fff;
   background: #ff1a8c;
-  bottom: 0;
+  padding: 30px 30px;
 }
 
 @media only screen and (max-width: 650px) {

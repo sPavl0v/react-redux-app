@@ -19,5 +19,6 @@
 @media only screen and (max-width: 650px) {
   .about_container {
     width: 100vw;
+    overflow-y: scroll;
   }
 }
