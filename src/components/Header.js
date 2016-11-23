@@ -42,7 +42,7 @@ export default class Header extends React.Component {
         <nav>
           <ul class="nav-main" id="navMain">
             <li class="logo">
-              <Link to="home">TODO now</Link>
+              <Link to="">TODO<span class="logo-by">NOW</span></Link>
             </li>
 
             <li>

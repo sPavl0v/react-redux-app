@@ -23,13 +23,15 @@ export default class Greeting extends React.Component {
       <section class="home-profile">
 
         <div class="profile-info">
-          <img src="assets/user-4.jpg" width="50%" alt="User image"/>
+          <img src="assets/user-5.jpg" width="50%" height="50%" alt="User image"/>
           <h1>Some Username</h1>
           <p>Someemail@gmail.com</p>
         </div>
-
-        <div class="profile-tabs">
-
+        <div class="divide-line"></div>
+        <div class="todo-info">
+          <img src="assets/list.png" width="30%" height="30%" alt="List of todos"/>
+          <img src="assets/stats.png" width="30%" height="30%" alt="List of todos"/>
+          <img src="assets/notifications.png" width="30%" height="30%" alt="List of todos"/>
         </div>
 
       </section>

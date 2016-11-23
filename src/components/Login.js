@@ -78,7 +78,7 @@ export default class About extends React.Component {
                 <input type="password" placeholder="••••••••••" id="signup_pass" />
                 <button onClick={this.createUser.bind(this)} >Sign Up</button>
 
-                <p class="sign-in-label">Don't have an account? <span class="signUpBtn" onClick={this.changeForm.bind(this)}>Sign up</span></p>
+                <p class="sign-in-label">Already have an account? <span class="signUpBtn" onClick={this.changeForm.bind(this)}>Sign in</span></p>
               </section>)
 
             }
