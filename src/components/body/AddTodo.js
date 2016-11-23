@@ -38,16 +38,22 @@ export default class AddTodo extends React.Component {
     const { user, items } = this.props;
     return (
       <div>
+        {/*// TODO: check if fiels id empty*/}
         {(items == 'todos') ? (
           <div class="app_add-todo">
-            <input placeholder="Add new todo" type="text" id="addTodo" />
-            <input type="button" value="Add" onClick={this.addTodo.bind(this,user)} />
-          </div>):
+            <input placeholder="Add new todo" type="text" id="addTodo"/>
+            <button type="button" value="Add" onClick={this.addTodo.bind(this,user)}>
+                Add
+            </button>
+        </div>):
           (items == 'notifications') ? (
 
           <div class="app_add-todo">
-            <input placeholder="Add new todo" type="text" id="addNote" />
-            <input type="button" value="Add" onClick={this.addNote.bind(this,user)} />
+            <input placeholder="Add new todo" type="text" id="addNote"/>
+            {/*<input type="button" value="Add" onClick={this.addNote.bind(this,user)} />*/}
+            <button type="button" value="Add" onClick={this.addNote.bind(this,user)}>
+              Add
+            </button>
           </div>
           ):
           (null)
