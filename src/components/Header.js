@@ -24,17 +24,17 @@ export default class Header extends React.Component {
   }
 
   makeResponsive() {
-    let x = document.getElementById("navMain");
-    if(x.className === "nav-main") {
-      x.className += " responsive";
+    let nav = document.getElementById("navMain");
+    if(nav.className === "nav-main") {
+      nav.className += " responsive";
     } else {
-      x.className = "nav-main";
+      nav.className = "nav-main";
     }
   }
 
   render() {
 
-    const { todos, done, notifications} = this.props;
+    const {todos, done, notifications} = this.props;
 
     return (
 
