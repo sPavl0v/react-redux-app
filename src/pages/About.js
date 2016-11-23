@@ -27,7 +27,7 @@ export default class About extends React.Component {
         <div class="about_block">
           <h2>Feedback:</h2>
 
-          <p>If you find some issues on this website, or have some advices - connect
+          <p>If you find some issues on this website, or have some advices - connect</p>
           me on my <a class="about_connects" href="https://www.facebook.com/profile.php?id=100011817270760">Facebook</a>
           <a class="about_connects" href="https://vk.com/id52774590"> Vkontakte</a>,
            or write me directly on my Email: <span class="about_connects">serhiypavlov33@gmail.com</span><p/>
