@@ -1,18 +1,23 @@
 .about_container {
-  background: linear-gradient(to bottom, rgba(68, 0, 102,0.4), rgba(0,0,0,0.6));
-  height: 55vh;
-  margin-top: 15vh;
-  color: rgba(255, 255, 255, 0.7);
-  padding: 40px;
-  box-sizing: border-box;
-  width: 55vw;
+  padding: 5vw;
+  width: 80vw;
+  height: 85vh;
+  background: linear-gradient(to bottom, rgba(224, 204, 255,0.4), rgba(0,0,0,0.6));
+  color: #fff;
+  font-size: 20px;
 }
 
 .about_block {
-  padding-bottom: 30px;
+  padding-bottom: 5vh;
 }
 
 .about_block h2, .about_connects {
   color: rgba(255, 255, 255, 1);
   font-weight: bold;
+}
+
+@media only screen and (max-width: 650px) {
+  .about_container {
+    width: 100vw;
+  }
 }

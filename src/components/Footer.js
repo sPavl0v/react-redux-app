@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <div class="footer">
-        <span>Some Copyright &copy; </span>
+        <p>COPYRIGHT &copy; </p>
       </div>
     );
   }

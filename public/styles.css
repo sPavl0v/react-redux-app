@@ -239,9 +239,21 @@ ul.nav-main li.logo .logo-by {
 /*Footer*/
 .footer {
   display: flex;
-  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 10vh;
+  color: #fff;
+  background: #ff1a8c;
+  bottom: 0;
 }
 
+@media only screen and (max-width: 650px) {
+  .footer {
+    width: 100vw;
+    height: 10vh;
+  }
+}
 
 /*User profile*/
 .home-profile {
@@ -250,15 +262,14 @@ ul.nav-main li.logo .logo-by {
   justify-content:flex-start;
   align-items: center;
   width: 80vw;
-  height: 95vh;
+  height: 85vh;
   background: linear-gradient(to bottom, rgba(224, 204, 255,0.4), rgba(0,0,0,0.6));
   color: #fff;
   font-size: 20px;
-
 }
 
 .home-profile .profile-info {
-  margin-top: 10vh;
+  margin-top: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -282,7 +293,7 @@ ul.nav-main li.logo .logo-by {
   display: flex;
   flex-direction: row;
   justify-content: space-around;;
-  margin-top: 10vh;
+  margin-top: 5vh;
   width: 50vh;
 }
 
